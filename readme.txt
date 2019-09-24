@@ -1,1 +1,2 @@
-this is a mapreduce warehouse
+this is a mapreduce warehouse，oh well
+good i like
