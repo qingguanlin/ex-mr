@@ -1,0 +1,20 @@
+# Step 1: 配置CentOS-Base.repo使用阿里源
+wget -O /etc/yum.repos.d/CentOS-Base.repo http://mirrors.aliyun.com/repo/Centos-7.repo
+# Step 2: 或者
+curl -o /etc/yum.repos.d/CentOS-Base.repo http://mirrors.aliyun.com/repo/Centos-7.repo
+# Step 3: 更新源
+yum update -y
+# step 4: 安装必要的一些系统工具
+yum install -y yum-utils device-mapper-persistent-data lvm2
+# Step 5: 添加软件源信息
+yum-config-manager --add-repo http://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo
+# Step 6: 更新并安装 Docker-CE
+yum makecache fast
+yum -y install docker-ce
+# Step 7: 开启Docker服务
+sudo service docker start
+# step 8: 查看docker版本
+docker version
+# step 9: 启动HelloWorld容器
+docker run hello-world
+
